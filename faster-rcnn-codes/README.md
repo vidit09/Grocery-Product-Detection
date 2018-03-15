@@ -1,6 +1,6 @@
 # Faster RCNN
 
-# Steps to use.
+## Steps to use demo.
 
 1. Download the trained weights <a href="https://drive.google.com/open?id=15QvppUCSvmxEr3LDK6LxnYeYP7TC2Mkl">here</a>. Unzip to get ckpts.
 2. Set the path to Faster RCNN installation path in config.py
@@ -8,5 +8,6 @@
 	```
 	python grocery_demo.py --box=big --img=/path/to/img --conf=0.5
 	``` 
+4. Output will be saved in same directory.
 
 
