@@ -4,5 +4,7 @@ NUM_NEG_BG_SAMPLE: 2
 TARGET_SIZE: 600
 MAX_SIZE: 1000
 
-OUT_DIR: 'data/'
+OUT_DIR: 'aug_data/'
 PRODUCT_IMG_DIR: '/Users/vidit/Thesis/Grocery_products/'
+BG_DIR: '/Users/vidit/Thesis/shelf_images/'
+NEG_BG_DIR: '/Users/vidit/Thesis/coco/images/train2014/'
