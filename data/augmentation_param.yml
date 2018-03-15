@@ -1,0 +1,8 @@
+
+NUM_SHELF_BG_SAMPLE: 2
+NUM_NEG_BG_SAMPLE: 2
+TARGET_SIZE: 600
+MAX_SIZE: 1000
+
+OUT_DIR: 'data/'
+PRODUCT_IMG_DIR: '/Users/vidit/Thesis/Grocery_products/'
