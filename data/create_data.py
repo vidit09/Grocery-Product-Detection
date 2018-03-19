@@ -8,7 +8,6 @@ import yaml
 
 
 from helper import resize
-from transforms import aug_transforms
 from warp import wrap_fg_bg
 
 #set up configurations for yaml
