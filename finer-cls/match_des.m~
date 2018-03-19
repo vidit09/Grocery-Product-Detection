@@ -35,7 +35,6 @@ function match_des
 
 
     % Set output for Faster RCNN boxes
-    % Crop needed to be resized for better matching
     if inter == 1
         files = dir('path/to/small/box/results');
         crop_dim = [200,300];
@@ -93,29 +92,25 @@ function match_des
 
             ss = split(label,'_');
             class = ss{2};
- 
-            % get cluster centers corresponding to predicted label
+            % get cluster centers corresponding to predicted labe
             kdtree = all_kdtree{str2num(class)};
             centers = all_centers{str2num(class)};
             enc = all_enc{str2num(class)};
 
             d = single(sf);
             nn = vl_kdtreequery(kdtree, centers, d) ;
-
-            % assign SIFTs to different centers
+            
             assignments = zeros(num_clusters,size(d,2));
             assignments(sub2ind(size(assignments), nn, 1:length(nn))) = 1;
-            
-            % get VLAD corresponding to the crop
+              
             des = vl_vlad(d,centers,single(assignments),'NormalizeComponents');
 
-            % match descriptor to training images
+
             enc = cell2mat(enc);
             dist = pdist2(des',enc');
             [sortV,sortI] = sort(dist);
             [minval,ind] = min(dist);
 
-            % get the corresponding final image label
             category = cats(str2num(class));
             index = find(contains(all_images,category));
             [p,name,ext] = fileparts(all_images{index(ind)});
