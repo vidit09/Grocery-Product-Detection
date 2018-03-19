@@ -2,6 +2,8 @@
 
 from imgaug import augmenters as iaa
 
+
+# Different transforms from the library.
 def aug_transforms():
     sometimes = lambda aug: iaa.Sometimes(0.5, aug)
     seq = iaa.Sequential(
@@ -16,13 +18,14 @@ def aug_transforms():
                        [
                            iaa.Sharpen(alpha=(0, 1.0), lightness=(0.75, 1.5)),  # sharpen images
 
+                           # add noise to pixels
                            iaa.Add((-10, 10)),
                            iaa.OneOf([
                                iaa.Multiply((0.5, 1.5)),
 
                            ]),
                            iaa.ContrastNormalization((0.1, 2.0)),  # improve or worsen the contrast
-                           sometimes(iaa.PiecewiseAffine(scale=(0.01, 0.05))),
+                           sometimes(iaa.PiecewiseAffine(scale=(0.01, 0.05))), # affine transform
 
                        ],
                        random_order=True
