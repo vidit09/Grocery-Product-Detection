@@ -2,7 +2,7 @@
 
 ## Steps to use demo.
 
-1. Download the trained weights <a href="https://drive.google.com/open?id=15QvppUCSvmxEr3LDK6LxnYeYP7TC2Mkl">here</a>. Unzip to get ckpts.
+1. Download the trained weights <a href="https://drive.google.com/open?id=1MQJ7gaQfhYIN8DMczNHddxV0fN_KmFMZ">here</a>. Unzip to get ckpts.
 2. Set the path to Faster RCNN installation path in config.py
 3. Run the demo with img and confidence threshold. Option --box as big or small. 
 	```
